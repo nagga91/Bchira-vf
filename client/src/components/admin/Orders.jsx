@@ -57,19 +57,18 @@ const Orders = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Manage Orders</h2>
+      <h2 className="text-2xl font-semibold mb-6">Gérer les commandes</h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr>
-              <th className="py-2 px-4 border-b">Name</th>
-              <th className="py-2 px-4 border-b">Address</th>
-              
-              <th className="py-2 px-4 border-b">Phone</th>
-              <th className="py-2 px-4 border-b">Total Price</th>
-              <th className="py-2 px-4 border-b">date</th>
-              <th className="py-2 px-4 border-b">Status</th>
+              <th className="py-2 px-4 border-b">Nom</th>
+              <th className="py-2 px-4 border-b">Adresse</th>
+              <th className="py-2 px-4 border-b">Téléphone</th>
+              <th className="py-2 px-4 border-b">Prix total</th>
+              <th className="py-2 px-4 border-b">Date</th>
+              <th className="py-2 px-4 border-b">Statut</th>
               <th className="py-2 px-4 border-b">Actions</th>
             </tr>
           </thead>
@@ -80,7 +79,6 @@ const Orders = () => {
                   {order.firstName} {order.lastName}
                 </td>
                 <td className="py-2 px-4 border-b">{order.address}</td>
-                
                 <td className="py-2 px-4 border-b">{order.phoneNumber}</td>
                 <td className="py-2 px-4 border-b">{order.totalPrice.toFixed(2)} TND</td>
                 <td className="py-2 px-4 border-b">{new Date(order.orderDate).toLocaleDateString('fr-FR', {
@@ -95,7 +93,7 @@ const Orders = () => {
                     onClick={() => openModal(order)}
                     className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200"
                   >
-                    Show Cart
+                    Voir le panier
                   </button>
                   <div className='flex '>
                   <button
@@ -145,7 +143,7 @@ const Orders = () => {
             >
               X
             </button>
-            <h3 className="font-semibold text-xl mb-4">Cart Details for {selectedOrder.firstName} {selectedOrder.lastName}</h3>
+            <h3 className="font-semibold text-xl mb-4">Détails du panier pour {selectedOrder.firstName} {selectedOrder.lastName}</h3>
             <table >
               {selectedOrder.cart.map((item) => (
                 <tr key={item.product._id} className="flex gap-4" >
@@ -163,7 +161,7 @@ const Orders = () => {
               className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-200"
               onClick={closeModal}
             >
-              Close
+              Fermer
             </button>
           </div>
         </div>

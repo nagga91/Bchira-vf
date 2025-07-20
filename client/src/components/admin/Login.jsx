@@ -26,7 +26,7 @@ const Login = ({ setIsAdminAuthenticated }) => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-center mb-6">Admin Login</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Connexion Admin</h2>
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -35,7 +35,7 @@ const Login = ({ setIsAdminAuthenticated }) => {
             <input
               type="email"
               id="email"
-              placeholder="Enter your email"
+              placeholder="Entrez votre email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -45,12 +45,12 @@ const Login = ({ setIsAdminAuthenticated }) => {
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
+              Mot de passe
             </label>
             <input
               type="password"
               id="password"
-              placeholder="Enter your password"
+              placeholder="Entrez votre mot de passe"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -65,7 +65,7 @@ const Login = ({ setIsAdminAuthenticated }) => {
               type="submit"
               className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              Login
+              Se connecter
             </button>
           </div>
         </form>

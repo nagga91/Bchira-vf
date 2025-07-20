@@ -25,13 +25,12 @@ const ProductCard = ({ product }) => {
       actions={[
         <Link to={`/shop/${product._id}`}>
           <button className='cta-button' key="buy">
-               Add to cart
+            Ajouter au panier
           </button>
         </Link>
-
-]}
->
-<img height={"100px"} src={product.images[0]} alt="" />
+      ]}
+    >
+      <img height={"100px"} src={product.images[0]} alt="" />
       <p>{product.description}</p>
     </Card>
   )

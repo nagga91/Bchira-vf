@@ -3,30 +3,30 @@ import React from 'react';
 const benefits = [
   {
     icon: "🚚",
-    title: "Free Shipping",
-    description: "Free shipping on all orders over $200"
+    title: "Livraison gratuite",
+    description: "Livraison offerte pour toute commande supérieure à 200$"
   },
   {
     icon: "🔒",
-    title: "Secure Payment",
-    description: "100% secure payment processing"
+    title: "Paiement sécurisé",
+    description: "Traitement de paiement 100% sécurisé"
   },
   {
     icon: "↩️",
-    title: "Easy Returns",
-    description: "30-day money-back guarantee"
+    title: "Retours faciles",
+    description: "Garantie satisfait ou remboursé sous 30 jours"
   },
   {
     icon: "👨‍💼",
-    title: "Expert Support",
-    description: "Professional design consultation available"
+    title: "Support expert",
+    description: "Conseil professionnel en design disponible"
   }
 ];
 
 function Benefits() {
   return (
     <section className="benefits">
-      <h2 className="section-title">Why Choose Us</h2>
+      <h2 className="section-title">Pourquoi nous choisir</h2>
       <div className="benefits-grid">
         {benefits.map((benefit, index) => (
           <div key={index} className="benefit-card">

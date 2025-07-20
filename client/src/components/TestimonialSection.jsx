@@ -29,7 +29,7 @@ export default function TestimonialSection() {
     <section className="py-16 testimonial bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="section-title">
-          OUR TESTIMONIALS
+          NOS TÉMOIGNAGES
         </h2>
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Left - Image */}

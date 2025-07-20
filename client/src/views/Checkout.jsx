@@ -88,6 +88,11 @@ const Panier = () => {
       if (resp.status === 201) {
         setOrderSuccess(true);
         toast.success("Merci, votre commande sera traitée");
+        await axios.post('/api/users/contact', {
+        name: formData.firstName+" "+formData.lastName,
+        email: formData.phoneNumber,
+        message: "Nouveau commande de Rideaux",
+      });
         setTimeout(handleClearCart, 2000);
       }
     } catch (err) {

@@ -275,10 +275,13 @@ body {
 }
 
 .contact-section{
-  height: 60vh;
-  padding: 4rem 5%;
+  min-height: calc(100vh - 180px); /* 80px header + 100px footer approx */
+  padding: 8rem 5% 4rem 5%; /* top padding for header */
   color: var(--primary);
   background-color: #F2F6D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-info .icon-contact{
@@ -382,7 +385,8 @@ body {
     display: none;
   }
   .contact-section{
-    height: 100vh;
+    min-height: 100vh;
+    padding: 7rem 2% 2rem 2%;
   }
 }
 

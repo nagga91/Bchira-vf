@@ -52,42 +52,78 @@ exports.addProduct = async (req, res) => {
   }
 };
 
-// Edit product
 exports.editProduct = async (req, res) => {
   try {
-    const updates = { ...req.body }
-    const { colors: colorsJson = '[]' } = req.body
+    const updates = { ...req.body };
+  
+    
+    // Extract indexed fields
+    const colorNames = [];
+    const existingColorImages = [];
 
-    // Remplacement éventuel des images produit
-    if (req.files.images) {
-      updates.images = req.files.images.map(f => f.path)
+    for (let key in req.body) {
+      if (key.startsWith('colorNames[')) {
+        const index = key.match(/\d+/)[0];
+        colorNames[index] = req.body[key];
+      }
+      if (key.startsWith('existingColorImages[')) {
+        const index = key.match(/\d+/)[0];
+        existingColorImages[index] = req.body[key];
+      }
     }
 
-    // Remplacement éventuel des images de couleur
-    if (req.files.colorImages) {
-      const colorNames = JSON.parse(colorsJson)
-      const colorFiles = req.files.colorImages
-      updates.colors = colorNames.map((name, i) => ({
-        name,
-        image: colorFiles[i] ? colorFiles[i].path : ''
-      }))
+    // Ensure colorImages is always an array
+    let colorFiles = [];
+    
+    if (req.files && req.files.colorImages) {
+      colorFiles = Array.isArray(req.files.colorImages)
+        ? req.files.colorImages
+        : [req.files.colorImages];
     }
 
-    // Conversion des champs numériques
-    if (updates.price != null)   updates.price = Number(updates.price)
-    if (updates.largeur != null) updates.largeur = Number(updates.largeur)
-    if (updates.promo != null)   updates.promo = Number(updates.promo)
+    // Build the updated colors array
+    updates.colors = updates.colorNames.map((name, i) => ({
+      name,
+      image: colorFiles[i] ? colorFiles[i].path : (existingColorImages[i] || '')
+    }));
 
-    const updated = await Product.findByIdAndUpdate(
+
+    // Handle product images: new + existing
+    let images = [];
+    if (req.files && req.files.images) {
+      const uploaded = Array.isArray(req.files.images)
+        ? req.files.images
+        : [req.files.images];
+      images = uploaded.map(f => f.path);
+    }
+
+    if (req.body.existingImages) {
+      const existing = JSON.parse(req.body.existingImages);
+      images = images.concat(existing.filter(Boolean));
+    }
+
+    updates.images = images;
+
+    // Convert numeric fields
+    if (updates.price != null) updates.price = Number(updates.price);
+    if (updates.largeur != null) updates.largeur = Number(updates.largeur);
+    if (updates.promo != null) updates.promo = Number(updates.promo);
+
+    // Update the product
+    const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       updates,
       { new: true }
-    )
+    );
+
     res.status(200).json({ message: 'Product updated', product: updatedProduct });
   } catch (error) {
+    console.error('Edit product error:', error);
     res.status(500).json({ message: 'Error updating product', error });
   }
 };
+
+
 
 // Delete product
 exports.deleteProduct = async (req, res) => {

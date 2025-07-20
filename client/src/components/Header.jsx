@@ -18,7 +18,7 @@ function Header({ cart }) {
     <header className="header">
       <nav className="nav">
         <div className="nav-links">
-          <input type="text" placeholder='Search...' />
+          <input type="text" placeholder='Rechercher...' />
         </div>
 
         <div className="logo">
@@ -43,7 +43,7 @@ function Header({ cart }) {
         </div>
 
         <Drawer title="Menu" onClose={onClose} open={open}>
-          <Link to="/"> <p className="nav-link">Home</p> </Link>
+          <Link to="/"> <p className="nav-link">Accueil</p> </Link>
           <Link to="/shop"> <p className="nav-link">Produits</p> </Link>
           <Link to="/checkout"> <p className="nav-link">Panier</p> </Link>
           <Link to="/contact"> <p className="nav-link">Contact</p> </Link>

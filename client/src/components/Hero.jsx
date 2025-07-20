@@ -4,9 +4,9 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1 className="hero-title">Transform Your Space</h1>
-        <p className="hero-subtitle">Discover our premium collection of elegant curtains</p>
-        <button className="cta-button">Shop Now</button>
+        <h1 className="hero-title">Transformez votre espace</h1>
+        <p className="hero-subtitle">Découvrez notre collection premium de rideaux élégants</p>
+        <button className="cta-button">Acheter maintenant</button>
       </div>
     </section>
   );

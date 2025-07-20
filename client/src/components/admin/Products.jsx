@@ -81,21 +81,21 @@ const AdminProducts = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-3xl font-semibold mb-6">Manage Products</h2>
+      <h2 className="text-3xl font-semibold mb-6">Gérer les produits</h2>
       <Link
         to="/admin/addProduct"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block"
       >
-        Add Product
+        Ajouter un produit
       </Link>
 
       <table className="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
         <thead>
           <tr className="bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
             <th className="py-3 px-6">Image</th>
-            <th className="py-3 px-6">Name</th>
-            <th className="py-3 px-6">Category</th>
-            <th className="py-3 px-6">Price</th>
+            <th className="py-3 px-6">Nom</th>
+            <th className="py-3 px-6">Catégorie</th>
+            <th className="py-3 px-6">Prix</th>
             <th className="py-3 px-6 text-center">Actions</th>
           </tr>
         </thead>
@@ -113,13 +113,13 @@ const AdminProducts = () => {
                   to={`/admin/editProduct/${product._id}`}
                   className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded mr-2"
                 >
-                  Edit
+                  Modifier
                 </Link>
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
                   onClick={() => handleDeleteClick(product._id)} // Show the modal before deleting
                 >
-                  Delete
+                  Supprimer
                 </button>
                 {/* <button
                   className="bg-black hover:bg-gray-800 text-white font-bold py-1 px-3 rounded"
@@ -142,9 +142,9 @@ const AdminProducts = () => {
             currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-400'
           }`}
         >
-          Previous
+          Précédent
         </button>
-        <span className="px-4 py-2">Page {currentPage} of {totalPages}</span>
+        <span className="px-4 py-2">Page {currentPage} sur {totalPages}</span>
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
@@ -152,7 +152,7 @@ const AdminProducts = () => {
             currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-400'
           }`}
         >
-          Next
+          Suivant
         </button>
       </div>
 
@@ -160,19 +160,19 @@ const AdminProducts = () => {
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-            <h2 className="text-lg font-semibold mb-4">Are you sure you want to delete this product?</h2>
+            <h2 className="text-lg font-semibold mb-4">Êtes-vous sûr de vouloir supprimer ce produit ?</h2>
             <div className="flex justify-end">
               <button
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mr-2"
                 onClick={handleDelete} // Confirm deletion
               >
-                Yes
+                Oui
               </button>
               <button
                 className="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded"
                 onClick={handleCancel} // Cancel deletion
               >
-                Cancel
+                Annuler
               </button>
             </div>
           </div>

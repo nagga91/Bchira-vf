@@ -3,22 +3,22 @@ import React from 'react';
 const products = [
   {
     id: 1,
-    name: "Velvet Blackout Curtains",
+    name: "Rideaux occultants en velours",
     price: "$129.99"
   },
   {
     id: 2,
-    name: "Sheer Linen Curtains",
+    name: "Rideaux en lin transparent",
     price: "$89.99"
   },
   {
     id: 3,
-    name: "Geometric Pattern Curtains",
+    name: "Rideaux à motifs géométriques",
     price: "$149.99"
   },
   {
     id: 4,
-    name: "Cotton Blend Curtains",
+    name: "Rideaux en mélange de coton",
     price: "$99.99"
   }
 ];
@@ -26,7 +26,7 @@ const products = [
 function FeaturedProducts() {
   return (
     <section className="featured">
-      <h2 className="section-title">Featured Products</h2>
+      <h2 className="section-title">Produits phares</h2>
       <div className="products-grid">
         {products.map(product => (
           <div key={product.id} className="product-card">

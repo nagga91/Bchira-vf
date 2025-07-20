@@ -16,11 +16,12 @@ import AddProduct from './components/admin/Addproduct';
 import EditProduct from './components/admin/Editproduct';
 import Login from './components/admin/Login';
 import Panier from './views/Checkout';
+import ContactUs from './components/ContactUs';
 
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   const user=useLoaderData()
-  console.log(user)
+ 
    if (!user) {
      return <Navigate to="/admin/login" />;
    }
@@ -101,7 +102,7 @@ function App() {
           loader:productLoader
         },
         {path:"/checkout",element:<Panier />,loader:fetchCart},
-        { path: "/contact", element: <Contact /> },
+        { path: "/contact", element: <ContactUs /> },
         { path: "/shop", element: <ProductsPage />, loader: productsLoader },
         {
           path: "/admin",

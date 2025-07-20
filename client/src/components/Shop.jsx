@@ -25,11 +25,11 @@ function Shop() {
 
   return (
     <div className="shop-page">
-      <h1 className="shop-title">Our Collection</h1>
+      <h1 className="shop-title">Notre Collection</h1>
       <div className="filters">
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder="Rechercher des produits..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="filter-input"
@@ -75,7 +75,7 @@ function Shop() {
           </div>
         ))}
         {filteredProducts.length === 0 && (
-          <p style={{ textAlign: 'center', width: '100%' }}>No products found.</p>
+          <p style={{ textAlign: 'center', width: '100%' }}>Aucun produit trouvé.</p>
         )}
       </div>
     </div>

@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="grid items-center grid-cols-3 h-fit md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="contact-info">
-            <h3 className="text-lg font-semibold mb-4">CONTACT INFO</h3>
+            <h3 className="text-lg font-semibold mb-4">INFOS DE CONTACT</h3>
             <div className="space-y-4 text-gray-700">
               <p className="flex items-start gap-3">
                 <span className="p-2 text-white rounded-full">
@@ -38,12 +38,12 @@ const Contact = () => {
         </div>
           {/* Information */}
           <div className="info-contact">
-            <h3 className="text-lg font-semibold mb-4">INFORMATION</h3>
+            <h3 className="text-lg font-semibold mb-4">INFORMATIONS</h3>
             <ul className="space-y-2">
-              <li className="cursor-pointer">Terms & Conditions</li>
-              <li className="cursor-pointer">Delivery Information</li>
-              <li className="cursor-pointe">Privacy Policy</li>
-              <li className="cursor-pointer">Contact Us</li>
+              <li className="cursor-pointer">Conditions générales</li>
+              <li className="cursor-pointer">Informations de livraison</li>
+              <li className="cursor-pointe">Politique de confidentialité</li>
+              <li className="cursor-pointer">Contactez-nous</li>
             </ul>
           </div>
         </div>
@@ -70,12 +70,12 @@ const Contact = () => {
 
           {/* Newsletter */}
           <div className="mt-6 md:mt-0">
-            <h3 className="text-lg font-semibold mb-3 text-center md:text-left">SUBSCRIBE NEWSLETTER</h3>
+            <h3 className="text-lg font-semibold mb-3 text-center md:text-left">S'ABONNER À LA NEWSLETTER</h3>
             <div className="flex">
               <Input
                 addonAfter={<Send size={20} />}
                 type="email"
-                placeholder="Enter e-mail here..."
+                placeholder="Entrez votre e-mail ici..."
                 className="p-3 w-64 border border-gray-300 rounded-l-md focus:outline-none"
               />
             </div>

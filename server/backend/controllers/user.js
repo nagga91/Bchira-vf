@@ -119,12 +119,29 @@ const getCurrentUser = async (req, res) => {
   
     var mailOptions = {
       from: email,
-      to: "mnagga@gmail.com",
+      to: "bchirabchira32@gmail.com",
       subject: "message client",
       html:`
-      <p>Client: ${name}</p>
-      <p>email: ${email}</p>
-      <p>message: ${message}</p>`,
+      <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; padding: 0; margin: 0;">
+        <div style="background: #fff; max-width: 600px; margin: 30px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.07);">
+          <div style="background: #F2F6D0; padding: 2rem 0; text-align: center;">
+            <img src='/Bchira-vf/client/src/assets/images/logo.png' alt="Logo" style="height: 60px; margin-bottom: 10px;" />
+            <h2 style="color: #947d53; margin: 0;">Nouveau message client</h2>
+          </div>
+          <div style="padding: 2rem; color: #2c3e50;">
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Client :</strong> ${name}</p>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>phone :</strong> <a href="mailto:${email}" style="color: #947d53; text-decoration: none;">${email}</a></p>
+            <div style="background: #F2F6D0; border-left: 4px solid #947d53; padding: 1rem; border-radius: 6px; margin-bottom: 2rem;">
+              <p style="font-size: 1.15rem; margin: 0; color: #2c3e50;"><strong>Message :</strong></p>
+              <p style="font-size: 1.1rem; margin: 0; color: #2c3e50; white-space: pre-line;">${message}</p>
+            </div>
+          </div>
+          <div style="background: #947d53; color: #fff; text-align: center; padding: 1rem 0;">
+            <p style="margin: 0; font-size: 1rem;">© ${new Date().getFullYear()} Rideaux Bchira. Tous droits réservés.</p>
+          </div>
+        </div>
+      </div>
+      `,
     };
   
     const info = await transporter.sendMail(mailOptions, function (error, info) {

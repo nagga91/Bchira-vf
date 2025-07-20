@@ -9,10 +9,10 @@ const Navbar = () => {
                 <p>Menu</p>
         </div>
         <div className="logo">
-               <h3>CURTAINS</h3> 
+               <h3>RIDEAUX</h3> 
         </div>
         <div className="settings">
-                <input type="text" className='mx-4' placeholder='Search...' />
+                <input type="text" className='mx-4' placeholder='Rechercher...' />
                 <HiOutlineShoppingBag />
         </div>
     </div>
