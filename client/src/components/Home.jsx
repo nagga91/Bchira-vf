@@ -4,12 +4,14 @@ import FeaturedProducts from './FeaturedProducts';
 import Benefits from './Benefits';
 import TestimonialSection from './TestimonialSection';
 import Contact from './Contact';
+import { useLoaderData } from 'react-router-dom';
 
 function Home() {
+  const productslist = useLoaderData() || [];
   return (
     <>
       <Hero />
-      <FeaturedProducts />
+      <FeaturedProducts products={productslist}/>
       <Benefits />
       <TestimonialSection />
       <Contact />

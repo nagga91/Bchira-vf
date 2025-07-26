@@ -3,24 +3,24 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "John Deo",
-    role: "Customer",
-    text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    name: "Aya Ben Saïd",
+    role: "Cliente",
+    text: "Le service était impeccable et l'équipe très professionnelle. Je recommande vivement cette entreprise.",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
   },
   {
-    name: "Emily Carter",
-    role: "Customer",
-    text: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-    image: "https://randomuser.me/api/portraits/women/60.jpg",
+    name: "Omar Aloui",
+    role: "Client",
+    text: "Très satisfait de la qualité et de la rapidité. C'était au-delà de mes attentes.",
+    image: "https://randomuser.me/api/portraits/men/27.jpg",
   },
   {
-    name: "Michael Lee",
-    role: "Customer",
-    text: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Noura Haddad",
+    role: "Cliente",
+    text: "Une expérience exceptionnelle du début à la fin. Merci pour votre écoute et votre efficacité.",
+    image: "https://randomuser.me/api/portraits/women/41.jpg",
   },
-];
+]
 
 export default function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
