@@ -6,10 +6,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://51.210.180.53:5000',
         changeOrigin: true,
       },
-      '/uploads': 'http://localhost:5000',
+      '/uploads': 'http://51.210.180.53:5000',
     },
   },
 })
